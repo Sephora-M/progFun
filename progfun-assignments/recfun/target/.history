@@ -1,0 +1,18 @@
+console
+test
+run
+styleCheck
+submit sephora.madjiheurem@epfl.ch gARSR27KdY
+exit
+test
+submit sephora.madjiheurem@epfl.ch test("intNotZero throws an exception if its argument is 0") {
+    intercept[IllegalArgumentException] {
+      intNotZero(0)
+    }
+submit sephora.madjiheurem@epfl.ch gARSR27KdY
+exit
+submit sephora.madjiheurem@epfl.ch YUDcDaDSRw
+exit
+styleCheck
+submit sephora.madjiheurem@epfl.ch YUDcDaDSRw
+exit
