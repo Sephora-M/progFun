@@ -1,0 +1,49 @@
+
+    
+    (def (concat L1 L2) (if (null? L1) L2 (cons (car L1) (concat (cdr L1) L2))) (concat (quote (1 2)) (quote (3 4))))
+	(def (tf L) (if (null? L) () (if ( = (car L) 4) (cons 1 (cdr L)) (concat (tf (quote(car L))) (tf (cdr L))))) (tf (quote(1 2 3 4))))    
+    
+    
+     def (concat L1 L2) 
+		  (if (null? L1) 
+		  	L2 
+		  (cons (car L1) (concat (cdr L1) L2))) 
+    (concat (quote (1 2)) (quote (3 4)))
+    
+    
+    
+    (def(size L x) 
+    	(if (null? L) 
+    	x 
+    	(size (cdr L) (+ 1 x))
+    	) 
+    	(size (quote (1 2 3 4 4) 0)))
+    	
+    	
+   (def (tf L)
+   		(if (null? L) 
+   		()
+   		(val noteval (quote (car L))
+   			 (if (= noteval 'true) (cons(1 (tf (cdr L))))
+              (cons(noteval (tf (cdr L)))))) (tf (quote (true 1 2))))
+              
+   (def (tf L) (if (null? L) () (if ( = (car L) 4) (cons 1 (cdr L)) (cons (car L) (tf (cdr L))))) (tf (quote(1 2 3 4))))
+   
+   (def (tf L) 
+   		(if (null? L) 
+   		 () 
+   			(if (= 1 (size (quote (car L)) 0)) 
+   			 (if (= quote (car L) 'true) 
+   			  (cons 1 (tf (cdr L))) 
+   			  (cons (quote (car L)) (tf (cdr L)))
+   			 )
+   			)
+   		)
+   	)
+   	
+   	(def (tf L) (if (null? L) 2 ( (if (= 1 (size (quote (car L)) 0)) ((if (= quote (car L) 'true) (cons 1 (tf (cdr L))) (cons (quote (car L)) (tf (cdr L)))))))) (tf (quote (1 2 true))))
+   	
+   	(def (tf L) (cond ((null? L) 0) ((= 1 (size (quote (car L)) 0)) ((if (= (quote (car L)) 'true))  (cons 1 (tf (cdr L))) (cons (quote (car L)) (tf (cdr L)))))) (tf (quote (1 2 true))))
+   	
+   	(def (tf L) (cond ((null? L) 0) ((= (quote (car L)) 'true) (cons 1 (tf (cdr L)))) (else (cons (quote (car L)) (tf (cdr L))))) (tf (quote (1 2 true))))
+   	
